@@ -1,0 +1,309 @@
+/* Dark Mode Styles */
+:root {
+  --primary-color: #ff6b35;
+  --primary-dark: #e85a2a;
+  --secondary-color: #2a2d34;
+  --accent-color: #4ecdc4;
+  --light-color: #f7fff7;
+  --dark-color: #1a1a1a;
+  --gray-color: #6c757d;
+  --light-gray: #e9ecef;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --container-width: 1200px;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --primary-color: #ff7f50;
+  --primary-dark: #ff6b35;
+  --secondary-color: #4ecdc4;
+  --accent-color: #ff6b35;
+  --light-color: #1a1a1a;
+  --dark-color: #f7fff7;
+  --gray-color: #adb5bd;
+  --light-gray: #2c3035;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  color: var(--dark-color);
+  transition: var(--transition);
+}
+
+.dark-mode-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .dark-mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode-toggle .fa-sun {
+  display: none;
+}
+
+.dark-mode-toggle .fa-moon {
+  display: block;
+}
+
+[data-theme="dark"] .dark-mode-toggle .fa-sun {
+  display: block;
+  color: #f7fff7;
+}
+
+[data-theme="dark"] .dark-mode-toggle .fa-moon {
+  display: none;
+}
+
+/* Dark Mode Styles for Body and Main Elements */
+[data-theme="dark"] body {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+[data-theme="dark"] .header {
+  background-color: rgba(26, 26, 26, 0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .header.sticky {
+  background-color: rgba(26, 26, 26, 0.98);
+}
+
+[data-theme="dark"] .nav-links a {
+  color: var(--dark-color);
+}
+
+[data-theme="dark"] .hamburger span {
+  background-color: var(--dark-color);
+}
+
+/* Dark Mode for Sections */
+[data-theme="dark"] .featured,
+[data-theme="dark"] .how-it-works,
+[data-theme="dark"] .pricing,
+[data-theme="dark"] .testimonials,
+[data-theme="dark"] .faq,
+[data-theme="dark"] .contact,
+[data-theme="dark"] .products-section {
+  background-color: var(--light-color);
+}
+
+[data-theme="dark"] .section-header h2,
+[data-theme="dark"] .products-header h2 {
+  color: var(--dark-color);
+}
+
+[data-theme="dark"] .section-header p,
+[data-theme="dark"] .products-header p {
+  color: var(--gray-color);
+}
+
+/* Dark Mode for Cards */
+[data-theme="dark"] .vehicle-card,
+[data-theme="dark"] .product-card,
+[data-theme="dark"] .step,
+[data-theme="dark"] .pricing-card,
+[data-theme="dark"] .testimonial,
+[data-theme="dark"] .contact-form {
+  background-color: #2a2d34;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .vehicle-title h3,
+[data-theme="dark"] .product-title,
+[data-theme="dark"] .step h3,
+[data-theme="dark"] .pricing-card h3 {
+  color: var(--dark-color);
+}
+
+[data-theme="dark"] .vehicle-description p,
+[data-theme="dark"] .step p {
+  color: var(--gray-color);
+}
+
+/* Dark Mode for Buttons */
+[data-theme="dark"] .btn-secondary {
+  background-color: transparent;
+  color: var(--dark-color);
+  border: 2px solid var(--dark-color);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+/* Dark Mode for Forms */
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select,
+[data-theme="dark"] .form-group textarea {
+  background-color: #2a2d34;
+  border-color: #3a3f48;
+  color: var(--dark-color);
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group select:focus,
+[data-theme="dark"] .form-group textarea:focus {
+  border-color: var(--primary-color);
+}
+
+/* Dark Mode for Modals */
+[data-theme="dark"] .modal-content {
+  background-color: #2a2d34;
+  color: var(--dark-color);
+}
+
+[data-theme="dark"] .modal-header h2 {
+  color: var(--dark-color);
+}
+
+[data-theme="dark"] .close-modal {
+  background-color: #3a3f48;
+}
+
+[data-theme="dark"] .close-modal i {
+  color: var(--dark-color);
+}
+
+/* Dark Mode for Footer */
+[data-theme="dark"] footer {
+  background-color: #121212;
+}
+
+[data-theme="dark"] .footer-column h3::after {
+  background-color: var(--primary-color);
+}
+
+[data-theme="dark"] .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark Mode for FAQ */
+[data-theme="dark"] .faq-item {
+  border-bottom: 1px solid #3a3f48;
+}
+
+[data-theme="dark"] .faq-question h3 {
+  color: var(--dark-color);
+}
+
+/* Dark Mode for Testimonials */
+[data-theme="dark"] .testimonial-author {
+  background-color: #3a3f48;
+}
+
+[data-theme="dark"] .testimonial-content p {
+  color: var(--dark-color);
+}
+
+/* Dark Mode for Specs */
+[data-theme="dark"] .spec-item {
+  background-color: #3a3f48;
+  color: var(--gray-color);
+}
+
+[data-theme="dark"] .spec-item:hover {
+  background-color: rgba(255, 107, 53, 0.2);
+}
+
+/* Dark Mode for Cookie Consent */
+[data-theme="dark"] .cookie-consent {
+  background-color: #2a2d34;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .cookie-content p {
+  color: var(--dark-color);
+}
+
+/* Enhanced Hover Effects */
+.vehicle-card,
+.product-card,
+.step,
+.pricing-card,
+.testimonial {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.vehicle-card:hover,
+.product-card:hover,
+.step:hover,
+.pricing-card:hover,
+.testimonial:hover {
+  transform: translateY(-15px) !important;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: transform 0.6s ease;
+  transform: skewX(-25deg);
+  z-index: -1;
+}
+
+.btn:hover::before {
+  transform: skewX(-25deg) translateX(200%);
+}
+
+.nav-links a {
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Enhanced Form Inputs */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+}

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Xos Rental</title>
+  
+  <!-- Meta tags for better SEO -->
+  <meta name="description" content="Get in touch with Xos Rental for premium car and bike rental services. We're here to answer your questions and provide assistance.">
+  <meta name="keywords" content="car rental contact, bike rental contact, luxury vehicle rental support, Xos Rental contact">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Swiper CSS for sliders -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  
+  <!-- Leaflet CSS for maps -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="contact-styles.css">
+  <link rel="stylesheet" href="dark-mode.css">
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body class="contact-page">
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader">
+      <svg class="car" width="102" height="40" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(2 1)" stroke="#FF6B35" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+          <path class="car__body" d="M47.293 2.375C52.927.792 54.017.805 54.017.805c2.613-.445 6.838-.337 9.42.237l8.381 1.863c2.59.576 6.164 2.606 7.98 4.531l6.348 6.732 6.245 1.877c3.098.508 5.609 3.431 5.609 6.507v4.206c0 .29-2.536 4.189-5.687 4.189H36.808c-2.655 0-4.34-2.1-3.688-4.67 0 0 3.71-19.944 14.173-23.902zM36.5 15.5h54.01" stroke-width="3"/>
+          <ellipse class="car__wheel--left" stroke-width="3.2" fill="#FFF" cx="83.493" cy="30.25" rx="6.922" ry="6.808"/>
+          <ellipse class="car__wheel--right" stroke-width="3.2" fill="#FFF" cx="46.511" cy="30.25" rx="6.922" ry="6.808"/>
+          <path class="car__line car__line--top" d="M22.5 16.5H2.475" stroke-width="3"/>
+          <path class="car__line car__line--middle" d="M20.5 23.5H.4755" stroke-width="3"/>
+          <path class="car__line car__line--bottom" d="M25.5 9.5h-19" stroke-width="3"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Animated Background Elements -->
+  <div class="animated-bg">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
+
+  <header id="header" class="header">
+  <div class="container">
+    <div class="logo">
+      <svg class="logo-icon" width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" stroke="#FF6B35" stroke-width="5"/>
+        <path d="M30 50C30 40 40 30 50 30C60 30 70 40 70 50" stroke="#FF6B35" stroke-width="5" stroke-linecap="round"/>
+        <path d="M70 50C70 60 60 70 50 70C40 70 30 60 30 50" stroke="#FF6B35" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="10" fill="#FF6B35"/>
+      </svg>
+      <h1>Xos Rental</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="bikes.html">Bikes</a></li>
+        <li><a href="Booked.html">Booked</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <div class="cta-buttons">
+      <!-- Dark Mode Toggle -->
+      <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </button>
+      <a href="login.html" class="btn btn-secondary">Login</a>
+      <a href="login.html?signup=true" class="btn btn-primary">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero-subpage contact-hero">
+    <div class="container">
+      <div class="hero-content" data-aos="fade-up">
+        <h1 class="animated-heading">Get In Touch</h1>
+        <p class="animated-text">We'd love to hear from you. Reach out to our team for any questions or assistance.</p>
+        <div class="contact-quick-links">
+          <a href="#contact-form" class="quick-link">
+            <div class="quick-link-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <span>Send Message</span>
+          </a>
+          <a href="#map-section" class="quick-link">
+            <div class="quick-link-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <span>Find Us</span>
+          </a>
+          <a href="tel:+15551234567" class="quick-link">
+            <div class="quick-link-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <span>Call Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+  </section>
+
+  <!-- Contact Info Cards -->
+  <section class="contact-info-section">
+    <div class="container">
+      <div class="contact-info-cards" data-aos="fade-up">
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <h3>Visit Us</h3>
+          <p>123 Rental Avenue<br>Automotive District<br>New York, NY 10001</p>
+          <a href="#map-section" class="card-link">View on Map</a>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-phone-volume"></i>
+          </div>
+          <h3>Call Us</h3>
+          <p>Customer Support:<br>+251 951978014</p>
+          <p>Reservations:<br>+251 953813466</p>
+          <a href="tel:+15551234567" class="card-link">Call Now</a>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-envelope-open-text"></i>
+          </div>
+          <h3>Email Us</h3>
+          <p>General Inquiries:<br>info @xosrental.com</p>
+          <p>Support:<br> Nurexos@gmail.com</p>
+          <a href="mailto:info@xosrental.com" class="card-link">Send Email</a>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Opening Hours</h3>
+          <p>Monday - Friday:<br>8:00 AM - 8:00 PM</p>
+          <p>Saturday - Sunday:<br>9:00 AM - 6:00 PM</p>
+          <a href="#" class="card-link">Book Appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Contact Section -->
+  <section id="contact-form" class="contact-main-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="animated-heading">Send Us a Message</h2>
+        <p>We'll get back to you as soon as possible</p>
+      </div>
+      
+      <div class="contact-content" data-aos="fade-up">
+        <div class="contact-form-wrapper">
+          <form id="contact-form" class="contact-form">
+            <div class="form-floating">
+              <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+              <label for="name">Your Name</label>
+              <div class="form-status">
+                <i class="fas fa-check-circle success-icon"></i>
+                <i class="fas fa-exclamation-circle error-icon"></i>
+              </div>
+              <div class="error-message"></div>
+            </div>
+            
+            <div class="form-floating">
+              <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+              <label for="email">Your Email</label>
+              <div class="form-status">
+                <i class="fas fa-check-circle success-icon"></i>
+                <i class="fas fa-exclamation-circle error-icon"></i>
+              </div>
+              <div class="error-message"></div>
+            </div>
+            
+            <div class="form-floating">
+              <input type="text" id="subject" class="form-control" placeholder="Subject">
+              <label for="subject">Subject</label>
+              <div class="form-status">
+                <i class="fas fa-check-circle success-icon"></i>
+                <i class="fas fa-exclamation-circle error-icon"></i>
+              </div>
+              <div class="error-message"></div>
+            </div>
+            
+            <div class="form-floating">
+              <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
+              <label for="message">Your Message</label>
+              <div class="form-status">
+                <i class="fas fa-check-circle success-icon"></i>
+                <i class="fas fa-exclamation-circle error-icon"></i>
+              </div>
+              <div class="error-message"></div>
+            </div>
+            
+            <div class="form-group">
+              <div class="form-check">
+                <input type="checkbox" id="privacy-policy" class="form-check-input" required>
+                <label for="privacy-policy" class="form-check-label">I agree to the <a href="#">Privacy Policy</a> and consent to the processing of my data.</label>
+                <div class="error-message"></div>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-animated">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+              <div class="btn-loader"></div>
+            </button>
+          </form>
+          
+          <div class="form-success-message">
+            <div class="success-icon-container">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for reaching out. We'll get back to you shortly.</p>
+            <button class="btn btn-primary btn-animated send-another">Send Another Message</button>
+          </div>
+        </div>
+        
+        <div class="contact-info-sidebar">
+          <div class="contact-info-card">
+            <h3>Connect With Us</h3>
+            <p>We're always eager to hear from you. Whether you have a question about our services, need assistance with a booking, or want to provide feedback, we're here to help.</p>
+            
+            <div class="contact-social-links">
+              <a href="#" class="social-link" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+            
+            <div class="contact-direct-links">
+              <div class="direct-link">
+                <i class="fas fa-phone-alt"></i>
+                <span>+251 953813466</span>
+              </div>
+              <div class="direct-link">
+                <i class="fas fa-envelope"></i>
+                <span>info@xosrental.com</span>
+              </div>
+              <div class="direct-link">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>123 Rental Avenue, NY</span>
+              </div>
+            </div>
+            
+            <div class="business-hours">
+              <h4>Business Hours</h4>
+              <div class="hours-grid">
+                <div class="day">Monday - Friday</div>
+                <div class="time">8:00 AM - 8:00 PM</div>
+                <div class="day">Saturday</div>
+                <div class="time">9:00 AM - 6:00 PM</div>
+                <div class="day">Sunday</div>
+                <div class="time">9:00 AM - 6:00 PM</div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section id="map-section" class="map-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="animated-heading">Find Us</h2>
+        <p>Visit our locations or contact us directly</p>
+      </div>
+      
+      <div class="map-container" data-aos="fade-up">
+        <div id="contact-map" class="contact-map"></div>
+        
+        <div class="location-selector">
+          <h3>Our Locations</h3>
+          <div class="location-tabs">
+            <button class="location-tab active" data-location="new-york" data-lat="40.7128" data-lng="-74.0060">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>New York</span>
+            </button>
+            <button class="location-tab" data-location="los-angeles" data-lat="34.0522" data-lng="-118.2437">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Los Angeles</span>
+            </button>
+            <button class="location-tab" data-location="chicago" data-lat="41.8781" data-lng="-87.6298">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Chicago</span>
+            </button>
+            <button class="location-tab" data-location="miami" data-lat="25.7617" data-lng="-80.1918">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Miami</span>
+            </button>
+          </div>
+          
+          <div class="location-details">
+            <div class="location-detail active" data-location="new-york">
+              <h4>New York City</h4>
+              <p><i class="fas fa-map-marker-alt"></i> 123 Rental Avenue, Automotive District, New York, NY 10001</p>
+              <p><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</p>
+              <p><i class="fas fa-envelope"></i> newyork@xosrental.com</p>
+              <a href="https://maps.google.com/?q=New+York+City" target="_blank" class="btn btn-secondary btn-sm">Get Directions</a>
+            </div>
+            
+            <div class="location-detail" data-location="los-angeles">
+              <h4>Los Angeles</h4>
+              <p><i class="fas fa-map-marker-alt"></i> 456 Motor Drive, Beverly Hills, Los Angeles, CA 90210</p>
+              <p><i class="fas fa-phone-alt"></i> +1 (555) 234-5678</p>
+              <p><i class="fas fa-envelope"></i> losangeles@xosrental.com</p>
+              <a href="https://maps.google.com/?q=Los+Angeles" target="_blank" class="btn btn-secondary btn-sm">Get Directions</a>
+            </div>
+            
+            <div class="location-detail" data-location="chicago">
+              <h4>Chicago</h4>
+              <p><i class="fas fa-map-marker-alt"></i> 789 Lake Street, Downtown, Chicago, IL 60601</p>
+              <p><i class="fas fa-phone-alt"></i> +1 (555) 345-6789</p>
+              <p><i class="fas fa-envelope"></i> chicago@xosrental.com</p>
+              <a href="https://maps.google.com/?q=Chicago" target="_blank" class="btn btn-secondary btn-sm">Get Directions</a>
+            </div>
+            
+            <div class="location-detail" data-location="miami">
+              <h4>Miami</h4>
+              <p><i class="fas fa-map-marker-alt"></i> 101 Ocean Drive, South Beach, Miami, FL 33139</p>
+              <p><i class="fas fa-phone-alt"></i> +1 (555) 456-7890</p>
+              <p><i class="fas fa-envelope"></i> miami@xosrental.com</p>
+              <a href="https://maps.google.com/?q=Miami" target="_blank" class="btn btn-secondary btn-sm">Get Directions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+
+  <!-- Cookie Consent -->
+  <div class="cookie-consent">
+    <div class="cookie-content">
+      <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+      <div class="cookie-buttons">
+        <button class="btn btn-secondary cookie-settings-btn">Cookie Settings</button>
+        <button class="btn btn-primary cookie-accept-btn">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <svg class="logo-icon" width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="45" stroke="#FF6B35" stroke-width="5"/>
+              <path d="M30 50C30 40 40 30 50 30C60 30 70 40 70 50" stroke="#FF6B35" stroke-width="5" stroke-linecap="round"/>
+              <path d="M70 50C70 60 60 70 50 70C40 70 30 60 30 50" stroke="#FF6B35" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="50" cy="50" r="10" fill="#FF6B35"/>
+            </svg>
+            <h2>Xos Rental</h2>
+          </div>
+          <p>Premium car and bike rental services for all your transportation needs. Experience quality vehicles and exceptional service.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        
+        
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p>Subscribe to our newsletter for the latest updates and offers</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; 2023 Xos Rental. All rights reserved.</p>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Leaflet JS for maps -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Main Script -->
+  <script src="script.js"></script>
+  <!-- Contact Page Script -->
+  <script src="contact-script.js"></script>
+  <script src="dark-mode.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xos Rental | Premium Motorcycle Rental</title>
+  
+  <!-- Meta tags for better SEO -->
+  <meta name="description" content="Premium motorcycle rental service with sport bikes, cruisers, and adventure motorcycles">
+  <meta name="keywords" content="motorcycle rental, bike rental, sport bikes, cruisers, adventure motorcycles, premium bikes">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Swiper CSS for sliders -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="booking-styles.css">
+  <link rel="stylesheet" href="dark-mode.css">
+  <link rel="stylesheet" href="chat.css">
+
+  <style>
+    /* Animated Header Styles */
+    .hero-animated {
+      position: relative;
+      height: 100vh;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: white;
+    }
+
+    /* Animated Background Grid */
+    .tech-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(255, 107, 53, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 53, 0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: gridMove 20s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+
+    /* Floating Bike Images */
+    .floating-bikes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .bike-float {
+      position: absolute;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+    }
+
+    .bike-float:hover {
+      opacity: 1;
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(255, 107, 53, 0.5);
+    }
+
+    .bike-float:nth-child(1) {
+      width: 300px;
+      height: 200px;
+      top: 10%;
+      left: 5%;
+      animation: float1 8s ease-in-out infinite;
+    }
+
+    .bike-float:nth-child(2) {
+      width: 250px;
+      height: 150px;
+      top: 20%;
+      right: 10%;
+      animation: float2 10s ease-in-out infinite;
+    }
+
+    .bike-float:nth-child(3) {
+      width: 280px;
+      height: 180px;
+      bottom: 20%;
+      left: 8%;
+      animation: float3 12s ease-in-out infinite;
+    }
+
+    .bike-float:nth-child(4) {
+      width: 320px;
+      height: 200px;
+      bottom: 10%;
+      right: 5%;
+      animation: float4 9s ease-in-out infinite;
+    }
+
+    .bike-float:nth-child(5) {
+      width: 260px;
+      height: 160px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: float5 11s ease-in-out infinite;
+    }
+
+    @keyframes float1 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(2deg); }
+    }
+
+    @keyframes float2 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-25px) rotate(-1deg); }
+    }
+
+    @keyframes float3 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-35px) rotate(1deg); }
+    }
+
+    @keyframes float4 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(-2deg); }
+    }
+
+    @keyframes float5 {
+      0%, 100% { transform: translate(-50%, -50%) translateY(0px) rotate(0deg); }
+      50% { transform: translate(-50%, -50%) translateY(-40px) rotate(1deg); }
+    }
+
+    /* Neon Light Sweeps */
+    .neon-sweeps {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+
+    .light-sweep {
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, #ff6b35, transparent);
+      animation: sweep 4s linear infinite;
+    }
+
+    .light-sweep:nth-child(1) {
+      left: 20%;
+      animation-delay: 0s;
+    }
+
+    .light-sweep:nth-child(2) {
+      left: 50%;
+      animation-delay: 1s;
+    }
+
+    .light-sweep:nth-child(3) {
+      left: 80%;
+      animation-delay: 2s;
+    }
+
+    @keyframes sweep {
+      0% { opacity: 0; transform: translateX(-100px); }
+      50% { opacity: 1; }
+      100% { opacity: 0; transform: translateX(100px); }
+    }
+
+    /* Speed Lines */
+    .speed-lines {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .speed-line {
+      position: absolute;
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #ff6b35, transparent);
+      animation: speedLine 2s linear infinite;
+    }
+
+    .speed-line:nth-child(odd) {
+      top: 20%;
+      animation-delay: 0s;
+    }
+
+    .speed-line:nth-child(even) {
+      top: 60%;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes speedLine {
+      0% { left: -100px; opacity: 0; }
+      50% { opacity: 1; }
+      100% { left: 100%; opacity: 0; }
+    }
+
+    /* Tech Particles */
+    .tech-particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 4;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #ff6b35;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #ff6b35;
+      animation: particleFloat 6s linear infinite;
+    }
+
+    @keyframes particleFloat {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) translateX(100px);
+        opacity: 0;
+      }
+    }
+
+    /* Hero Content */
+    .hero-content-animated {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 1000px;
+      padding: 0 20px;
+    }
+
+    .hero-title-animated {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #ff6b35, #ffffff, #ff6b35);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: textShine 3s ease-in-out infinite, slideUp 1s ease 0.5s both;
+      text-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
+    }
+
+    @keyframes textShine {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .hero-subtitle-animated {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: slideUp 1s ease 1s both;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Search Form */
+    .search-container-animated {
+      background: rgba(255, 107, 53, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-top: 2rem;
+      opacity: 0;
+      animation: slideUp 1s ease 1.5s both;
+      border: 1px solid rgba(255, 107, 53, 0.3);
+    }
+
+    .search-form-animated {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      align-items: end;
+    }
+
+    .form-group-animated {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group-animated label {
+      color: white;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-group-animated input,
+    .form-group-animated select {
+      padding: 12px 16px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-group-animated input:focus,
+    .form-group-animated select:focus {
+      outline: none;
+      background: white;
+      box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+    }
+
+    .btn-search-animated {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #ff6b35, #f7931e);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-search-animated:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+    }
+
+    .btn-search-animated::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-search-animated:hover::before {
+      left: 100%;
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator-animated {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      opacity: 0;
+      animation: fadeIn 1s ease 2s both;
+    }
+
+    .scroll-arrow-animated {
+      width: 30px;
+      height: 30px;
+      border: 2px solid #ff6b35;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(-45deg);
+      }
+      40% {
+        transform: translateY(-10px) rotate(-45deg);
+      }
+      60% {
+        transform: translateY(-5px) rotate(-45deg);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .bike-float {
+        display: none;
+      }
+
+      .search-form-animated {
+        grid-template-columns: 1fr;
+      }
+
+      .search-container-animated {
+        padding: 1.5rem;
+      }
+    }
+
+    /* Performance optimizations */
+    .hero-animated * {
+      will-change: transform;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bike-float,
+      .tech-grid,
+      .light-sweep,
+      .speed-line,
+      .particle {
+        animation: none;
+      }
+      
+      .hero-title-animated,
+      .hero-subtitle-animated,
+      .search-container-animated,
+      .scroll-indicator-animated {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body class="bikes-page">
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader">
+      <svg class="bike" width="100" height="60" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#FF6B35" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <circle class="bike__wheel--front" cx="70" cy="40" r="18"/>
+          <circle class="bike__wheel--back" cx="20" cy="40" r="18"/>
+          <path class="bike__frame" d="M30 40 L45 20 L60 20 L70 40 M45 20 L50 40 M30 40 L50 40"/>
+          <path class="bike__handlebar" d="M60 20 L65 15 M60 20 L55 15"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <header id="header" class="header">
+  <div class="container">
+    <div class="logo">
+      <svg class="logo-icon" width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" stroke="#FF6B35" stroke-width="5"/>
+        <path d="M30 50C30 40 40 30 50 30C60 30 70 40 70 50" stroke="#FF6B35" stroke-width="5" stroke-linecap="round"/>
+        <path d="M70 50C70 60 60 70 50 70C40 70 30 60 30 50" stroke="#FF6B35" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="10" fill="#FF6B35"/>
+      </svg>
+      <h1>Xos Rental</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="bikes.html">Bikes</a></li>
+        <li><a href="Booked.html">Booked</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <div class="cta-buttons">
+      <!-- Dark Mode Toggle -->
+      <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </button>
+      <a href="login.html" class="btn btn-secondary">Login</a>
+      <a href="login.html?signup=true" class="btn btn-primary">Sign Up</a>
+    </div>
+  </div>
+</header>
+  <!-- Animated Hero Section -->
+  <section class="hero-animated">
+    <!-- Tech Grid Background -->
+    <div class="tech-grid"></div>
+
+    <!-- Floating Bike Images -->
+    <div class="floating-bikes">
+      <img src="/placeholder.svg?height=200&width=300" alt="Sport Bike" class="bike-float">
+      <img src="/placeholder.svg?height=150&width=250" alt="Cruiser Bike" class="bike-float">
+      <img src="/placeholder.svg?height=180&width=280" alt="Adventure Bike" class="bike-float">
+      <img src="/placeholder.svg?height=200&width=320" alt="Electric Bike" class="bike-float">
+      <img src="/placeholder.svg?height=160&width=260" alt="Premium Bike" class="bike-float">
+    </div>
+
+    <!-- Neon Light Sweeps -->
+    <div class="neon-sweeps">
+      <div class="light-sweep"></div>
+      <div class="light-sweep"></div>
+      <div class="light-sweep"></div>
+    </div>
+
+    <!-- Speed Lines -->
+    <div class="speed-lines">
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+    </div>
+
+    <!-- Tech Particles -->
+    <div class="tech-particles" id="particles-container"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content-animated">
+      <h1 class="hero-title-animated">PREMIUM BIKES</h1>
+      <p class="hero-subtitle-animated">Experience the Thrill of High-Performance Motorcycles</p>
+      
+      <div class="search-container-animated">
+        <form id="search-form" class="search-form-animated">
+          <div class="form-group-animated">
+            <label for="bike-type">Motorcycle Type</label>
+            <select id="bike-type">
+              <option value="all">All Motorcycles</option>
+              <option value="sport">Sport</option>
+              <option value="cruiser">Cruiser</option>
+              <option value="adventure">Adventure</option>
+              <option value="touring">Touring</option>
+            </select>
+          </div>
+          <div class="form-group-animated">
+            <label for="pickup-location">Pickup Location</label>
+            <input type="text" id="pickup-location" placeholder="Enter city or location">
+          </div>
+          <div class="form-group-animated">
+            <label for="pickup-date">Pickup Date</label>
+            <input type="date" id="pickup-date">
+          </div>
+          <div class="form-group-animated">
+            <label for="return-date">Return Date</label>
+            <input type="date" id="return-date">
+          </div>
+          <div class="form-group-animated">
+            <button type="submit" class="btn-search-animated">Search Motorcycles</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator-animated">
+      <div class="scroll-arrow-animated"></div>
+    </div>
+  </section>
+
+
+  <!-- Browse by Category Section -->
+<section class="categories">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Browse by Category</h2>
+      <p>Find the perfect bike for your needs</p>
+    </div>
+    <div class="category-grid" data-aos="fade-up">
+      <div class="category-card" data-category="cruiser" onclick="scrollToCategory('cruiser-bikes')">
+        <div class="category-icon">
+          <i class="fas fa-motorcycle"></i>
+        </div>
+        <h3>Cruiser</h3>
+        <p>Comfortable and stylish rides</p>
+        <span class="category-price">From $50/day</span>
+      </div>
+      <div class="category-card" data-category="sports" onclick="scrollToCategory('sport-bikes')">
+        <div class="category-icon">
+          <i class="fas fa-biking"></i>
+        </div>
+        <h3>Sports</h3>
+        <p>High-speed performance</p>
+        <span class="category-price">From $70/day</span>
+      </div>
+      <div class="category-card" data-category="adventure" onclick="scrollToCategory('adventure-bikes')">
+        <div class="category-icon">
+          <i class="fas fa-mountain"></i>
+        </div>
+        <h3>Adventure</h3>
+        <p>Off-road and long-distance</p>
+        <span class="category-price">From $60/day</span>
+      </div>
+      <div class="category-card" data-category="electric" onclick="scrollToCategory('electric-bikes')">
+        <div class="category-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h3>Electric</h3>
+        <p>Eco-friendly and efficient</p>
+        <span class="category-price">From $40/day</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+/**
+ * Scroll to category section
+ * @param {string} categoryId - The ID of the category section to scroll to
+ */
+function scrollToCategory(categoryId) {
+  const section = document.getElementById(categoryId);
+  if (section) {
+    const header = document.querySelector("header");
+    const headerHeight = header ? header.offsetHeight : 0;
+    const targetPosition = section.offsetTop - headerHeight;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth"
+    });
+
+    // Close mobile menu if open
+    const navLinks = document.querySelector(".nav-links");
+    const hamburger = document.querySelector(".hamburger");
+    if (navLinks && navLinks.classList.contains("active")) {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("active");
+    }
+  }
+}
+
+// Add click event listeners to category cards for better mobile touch support
+document.querySelectorAll('.category-card').forEach(card => {
+  card.addEventListener('click', function() {
+    const category = this.getAttribute('data-category');
+    let sectionId = '';
+    if (category === 'sports') sectionId = 'sport-bikes';
+    else if (category === 'cruiser') sectionId = 'cruiser-bikes';
+    else if (category === 'adventure') sectionId = 'adventure-bikes';
+    else if (category === 'electric') sectionId = 'electric-bikes';
+    if (sectionId) scrollToCategory(sectionId);
+  });
+});
+</script>
+
+  
+
+ <!-- Sport Bikes Section -->
+<section id="sport-bikes" class="featured">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Sport Bikes Collection</h2>
+      <p>High-performance machines for speed enthusiasts</p>
+    </div>
+    <div class="vehicles-grid" data-aos="fade-up">
+      <!-- Ducati Panigale V4 -->
+      <div class="vehicle-card" data-category="sport">
+        <div class="vehicle-image">
+          <img src="ducati bike_.jpg" alt="Ducati Panigale V4">
+          <span class="tag">Premium</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+            <button class="action-btn video-btn" title="Watch Video" data-video="ducati-panigale.mp4"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Ducati Panigale V4</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(42)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>1103cc V4</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>214 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-weight-hanging"></i>
+              <span>175 kg</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Sport</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Ducati Panigale V4 is the ultimate sport bike, offering race-bred performance with street-legal compliance.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$150<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Yamaha YZF-R1 -->
+      <div class="vehicle-card" data-category="sport">
+        <div class="vehicle-image">
+          <img src="Black Yamaha R1.jpg" alt="Yamaha YZF-R1">
+          <span class="tag">Sport</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Yamaha YZF-R1</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(36)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>998cc Inline-4</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>197 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-weight-hanging"></i>
+              <span>201 kg</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Track-Ready</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Yamaha YZF-R1 is a legendary sport bike with cutting-edge technology derived from MotoGP racing.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$130<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Kawasaki Ninja H2 -->
+      <div class="vehicle-card" data-category="sport">
+        <div class="vehicle-image">
+          <img src="Kawasaki Ninja H2.jpg" alt="Kawasaki Ninja H2">
+          <span class="tag">Supercharged</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Kawasaki Ninja H2</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(28)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>998cc Supercharged</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>228 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-bolt"></i>
+              <span>Supercharged</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Hyper Sport</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Kawasaki Ninja H2 is a technological marvel with a supercharged engine that delivers breathtaking performance.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$200<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Suzuki GSX-R1000 -->
+      <div class="vehicle-card" data-category="sport">
+        <div class="vehicle-image">
+          <img src="suzuji.jpg" alt="Suzuki GSX-R1000">
+          <span class="tag">Sport</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Suzuki GSX-R1000</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="count">(32)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>999cc Inline-4</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>202 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-weight-hanging"></i>
+              <span>202 kg</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Race-Inspired</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Suzuki GSX-R1000 is a legendary sport bike with championship-winning DNA and cutting-edge technology.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$125<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Aprilia RSV4 -->
+      <div class="vehicle-card" data-category="sport">
+        <div class="vehicle-image">
+          <img src="Aprilia RSV4.jpg" alt="Aprilia RSV4">
+          <span class="tag">Italian</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Aprilia RSV4</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(30)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>1099cc V4</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>217 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-weight-hanging"></i>
+              <span>180 kg</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Track Weapon</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Aprilia RSV4 is a championship-winning superbike with Italian flair and cutting-edge technology.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$160<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- MV Agusta F4 RR -->
+      <div class="vehicle-card" data-category="sport">
+        <div class="vehicle-image">
+          <img src="special.jpg" alt="MV Agusta F4 RR">
+          <span class="tag">Exotic</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>MV Agusta F4 RR</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(25)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>998cc Inline-4</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>201 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-bolt"></i>
+              <span>Italian Exotic</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Superbike</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The MV Agusta F4 RR is a masterpiece of Italian engineering with breathtaking design and performance.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$180<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cruiser Bikes Section -->
+<section id="cruiser-bikes" class="featured">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Cruiser Bikes Collection</h2>
+      <p>Classic style and comfortable riding position</p>
+    </div>
+    <div class="vehicles-grid" data-aos="fade-up">
+      <!-- Harley-Davidson Fat Boy -->
+      <div class="vehicle-card" data-category="cruiser">
+        <div class="vehicle-image">
+          <img src="5 AMAZING Harley-Davidson FAT BOY FLFBS Custom [4K] _ A&T Design.jpg" alt="Harley-Davidson Fat Boy">
+          <span class="tag">Iconic</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Harley-Davidson Fat Boy</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="count">(40)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>1868cc V-Twin</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>86 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Cruiser</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-music"></i>
+              <span>Iconic Sound</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Harley-Davidson Fat Boy is an iconic cruiser with a massive presence and unmistakable style.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$110<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Indian Chief -->
+      <div class="vehicle-card" data-category="cruiser">
+        <div class="vehicle-image">
+          <img src="2025 Indian Chief Bobber Dark Horse Motorcycle.jpg" alt="Indian Chief">
+          <span class="tag">Classic</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Indian Chief</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(35)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>1890cc V-Twin</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>92 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>American Classic</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-history"></i>
+              <span>Heritage</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Indian Chief is a modern classic that pays homage to America's motorcycle heritage with contemporary performance.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$120<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Yamaha VMAX -->
+      <div class="vehicle-card" data-category="cruiser">
+        <div class="vehicle-image">
+          <img src="Mad Max_ Yamaha V-Max 1200 Custom.jpg" alt="Yamaha VMAX">
+          <span class="tag">Muscle</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Yamaha VMAX</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(30)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>1679cc V4</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>200 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-bolt"></i>
+              <span>Muscle Cruiser</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Brutal Power</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Yamaha VMAX is the ultimate muscle cruiser with staggering acceleration and aggressive styling.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$140<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Honda Rebel 1100 -->
+      <div class="vehicle-card" data-category="cruiser">
+        <div class="vehicle-image">
+          <img src="Black Stylish Bike in road master long drive_ 🖤.jpg" alt="Honda Rebel 1100">
+          <span class="tag">Modern</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Honda Rebel 1100</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="count">(33)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>1084cc Parallel-Twin</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>86 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Modern Cruiser</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-cogs"></i>
+              <span>Multiple Modes</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Honda Rebel 1100 combines classic cruiser styling with modern technology and performance.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$90<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Triumph Bonneville Bobber -->
+      <div class="vehicle-card" data-category="cruiser">
+        <div class="vehicle-image">
+          <img src="Exploring the Timeless Charm of Triumph Bonneville Motorcycles _ New Triumph Bonneville 2025.jpg" alt="Triumph Bonneville Bobber">
+          <span class="tag">British</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Triumph Bonneville Bobber</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(37)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>1200cc Parallel-Twin</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>77 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Bobber Style</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-history"></i>
+              <span>Classic</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Triumph Bonneville Bobber is a modern interpretation of classic British bobber style with contemporary performance.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$100<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Kawasaki Vulcan S -->
+      <div class="vehicle-card" data-category="cruiser">
+        <div class="vehicle-image">
+          <img src="jpg(1).jpg" alt="Kawasaki Vulcan S">
+          <span class="tag">Entry</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Kawasaki Vulcan S</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="count">(28)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>649cc Parallel-Twin</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>61 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Beginner Friendly</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-user"></i>
+              <span>Ergo-Fit</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Kawasaki Vulcan S is an accessible cruiser with customizable ergonomics and sporty performance.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$70<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Adventure Bikes Section -->
+<section id="adventure-bikes" class="featured">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Adventure Bikes Collection</h2>
+      <p>Built for exploration on any terrain</p>
+    </div>
+    <div class="vehicles-grid" data-aos="fade-up">
+      <!-- BMW R 1250 GS -->
+      <div class="vehicle-card" data-category="adventure">
+        <div class="vehicle-image">
+          <img src="BMW r1250 GS.jpg" alt="BMW R 1250 GS">
+          <span class="tag">Adventure</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+            <button class="action-btn video-btn" title="Watch Video" data-video="bmw-r1250gs.mp4"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>BMW R 1250 GS</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(38)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>1254cc Boxer</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>136 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-mountain"></i>
+              <span>All-Terrain</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-gas-pump"></i>
+              <span>20L Tank</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The BMW R 1250 GS is the definitive adventure motorcycle, offering unmatched versatility for both on and off-road exploration.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$120<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- KTM 1290 Super Adventure -->
+      <div class="vehicle-card" data-category="adventure">
+        <div class="vehicle-image">
+          <img src="Find the perfect wallpaper for your device and let your passion for the KTM 1290 Super Duke R_.jpg" alt="KTM 1290 Super Adventure">
+          <span class="tag">Extreme</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>KTM 1290 Super Adventure</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(34)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>1301cc V-Twin</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>160 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-mountain"></i>
+              <span>Off-Road Capable</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Long Distance</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The KTM 1290 Super Adventure is a high-performance adventure bike ready for any terrain.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$150<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Ducati Multistrada V4 -->
+      <div class="vehicle-card" data-category="adventure">
+        <div class="vehicle-image">
+          <img src="The Ultimate Racetrack Machine.jpg" alt="Ducati Multistrada V4">
+          <span class="tag">Italian</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Ducati Multistrada V4</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(31)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>1158cc V4</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>170 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>All-Road</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-cogs"></i>
+              <span>Adaptive Cruise</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Ducati Multistrada V4 is a technological marvel with adaptive cruise control and superb performance.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$160<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Honda Africa Twin -->
+      <div class="vehicle-card" data-category="adventure">
+        <div class="vehicle-image">
+          <img src="Kriega _ OS-BASE Honda Pre-2022 Africa Twin CRF 1100L.jpg" alt="Honda Africa Twin">
+          <span class="tag">Legend</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Honda Africa Twin</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(39)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>1084cc Parallel-Twin</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>102 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-mountain"></i>
+              <span>Off-Road Focus</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Dakar Heritage</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Honda Africa Twin is a legendary adventure bike with Dakar Rally heritage and modern technology.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$130<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Yamaha Ténéré 700 -->
+      <div class="vehicle-card" data-category="adventure">
+        <div class="vehicle-image">
+          <img src="krin.jpg" alt="Yamaha Ténéré 700">
+          <span class="tag">Mid-Size</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Yamaha Ténéré 700</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="count">(29)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>689cc Parallel-Twin</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>72 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-mountain"></i>
+              <span>Off-Road Ready</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Lightweight</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Yamaha Ténéré 700 is a capable mid-size adventure bike with excellent off-road credentials.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$100<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- BMW F 850 GS -->
+      <div class="vehicle-card" data-category="adventure">
+        <div class="vehicle-image">
+          <img src="yama.jpg" alt="BMW F 850 GS">
+          <span class="tag">Mid-Size</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>BMW F 850 GS</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(32)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>853cc Parallel-Twin</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>90 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-mountain"></i>
+              <span>Adventure Ready</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>Versatile</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The BMW F 850 GS is a versatile mid-size adventure bike with excellent on and off-road capabilities.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$110<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Suzuki V-Strom 1050 -->
+      <div class="vehicle-card" data-category="adventure">
+        <div class="vehicle-image">
+          <img src="Suzuki DL 1000 Vstrom.jpg" alt="Suzuki V-Strom 1050">
+          <span class="tag">Value</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Suzuki V-Strom 1050</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="count">(27)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>1037cc V-Twin</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>106 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>All-Road</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-dollar-sign"></i>
+              <span>Great Value</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Suzuki V-Strom 1050 is a capable adventure bike offering excellent value for money.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$95<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Electric Bikes Section -->
+<section id="electric-bikes" class="featured">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Electric Bikes Collection</h2>
+      <p>Silent, powerful, and eco-friendly rides</p>
+    </div>
+    <div class="vehicles-grid" data-aos="fade-up">
+      <!-- Zero SR/F -->
+      <div class="vehicle-card" data-category="electric">
+        <div class="vehicle-image">
+          <img src="electr.jpg" alt="Zero SR/F">
+          <span class="tag">Electric</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Zero SR/F</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(26)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-bolt"></i>
+              <span>Electric Motor</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>110 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>140 mi Range</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-leaf"></i>
+              <span>Zero Emissions</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Zero SR/F is a premium electric motorcycle with impressive performance and range.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$120<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Harley-Davidson LiveWire -->
+      <div class="vehicle-card" data-category="electric">
+        <div class="vehicle-image">
+          <img src="yabed.jpg" alt="Harley-Davidson LiveWire">
+          <span class="tag">Iconic</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Harley-Davidson LiveWire</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="count">(24)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-bolt"></i>
+              <span>Electric Motor</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>105 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>146 mi Range</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-history"></i>
+              <span>Harley Heritage</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Harley-Davidson LiveWire combines iconic Harley styling with cutting-edge electric performance.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$150<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Energica Ego -->
+      <div class="vehicle-card" data-category="electric">
+        <div class="vehicle-image">
+          <img src="suz.jpg" alt="Energica Ego">
+          <span class="tag">Italian</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Energica Ego</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(22)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-bolt"></i>
+              <span>Electric Motor</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>145 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>120 mi Range</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-flag-checkered"></i>
+              <span>Race-Inspired</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Energica Ego is an Italian electric superbike with MotoE racing pedigree.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$170<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Lightning Strike -->
+      <div class="vehicle-card" data-category="electric">
+        <div class="vehicle-image">
+          <img src="light.jpg" alt="Lightning Strike">
+          <span class="tag">Performance</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Lightning Strike</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="count">(20)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-bolt"></i>
+              <span>Electric Motor</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>90 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>150 mi Range</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-dollar-sign"></i>
+              <span>Great Value</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Lightning Strike offers impressive electric performance at a more accessible price point.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$110<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Cake Kalk& -->
+      <div class="vehicle-card" data-category="electric">
+        <div class="vehicle-image">
+          <img src="clar.jpg" alt="Cake Kalk&">
+          <span class="tag">Off-Road</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Cake Kalk&</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(18)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-bolt"></i>
+              <span>Electric Motor</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>42 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-mountain"></i>
+              <span>Off-Road Focus</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-leaf"></i>
+              <span>Silent Riding</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Cake Kalk& is a minimalist electric off-road motorcycle designed for pure riding enjoyment.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$90<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Super Soco TC Max -->
+      <div class="vehicle-card" data-category="electric">
+        <div class="vehicle-image">
+          <img src="denh.jpg" alt="Super Soco TC Max">
+          <span class="tag">Urban</span>
+          <div class="quick-view">Quick View</div>
+          <div class="vehicle-actions">
+            <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+            <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+          </div>
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-title">
+            <h3>Super Soco TC Max</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="count">(16)</span>
+            </div>
+          </div>
+          <div class="vehicle-specs">
+            <div class="spec-item">
+              <i class="fas fa-bolt"></i>
+              <span>Electric Motor</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>5 HP</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-road"></i>
+              <span>60 mi Range</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-city"></i>
+              <span>Urban Commuter</span>
+            </div>
+          </div>
+          <div class="vehicle-description">
+            <p>The Super Soco TC Max is an affordable electric motorcycle perfect for urban commuting.</p>
+          </div>
+          <div class="vehicle-price">
+            <h4>$50<span>/day</span></h4>
+            <button class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Safety First -->
+  <section class="safety-first">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Safety First</h2>
+        <p>Your safety is our top priority</p>
+      </div>
+      <div class="features-grid" data-aos="fade-up">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-helmet-safety"></i>
+          </div>
+          <h3>Quality Gear</h3>
+          <p>We offer premium helmets, jackets, gloves, and protective gear for rent to ensure your safety on every ride.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-wrench"></i>
+          </div>
+          <h3>Regular Maintenance</h3>
+          <p>All our motorcycles undergo thorough inspections and maintenance after each rental to ensure optimal performance.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3>Rider Orientation</h3>
+          <p>Every rental includes a comprehensive orientation session to familiarize you with your motorcycle's features.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h3>24/7 Support</h3>
+          <p>Our roadside assistance team is available around the clock to help with any issues during your rental period.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Plans Section (Same as Homepage) -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Motorcycle Rental Plans</h2>
+        <p>Choose the plan that fits your needs</p>
+      </div>
+      <div class="pricing-tabs" data-aos="fade-up">
+        <button class="tab-btn active" data-plan="daily">Daily</button>
+        <button class="tab-btn" data-plan="weekly">Weekly</button>
+        <button class="tab-btn" data-plan="monthly">Monthly</button>
+      </div>
+      <div class="pricing-cards" data-aos="fade-up">
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing-header">
+            <div class="pricing-icon">
+              <i class="fas fa-motorcycle"></i>
+            </div>
+            <h3>Standard</h3>
+            <div class="price" data-daily="$65" data-weekly="$350" data-monthly="$1200">
+              <span class="amount">$65</span>
+              <span class="period">/day</span>
+            </div>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Standard Motorcycles</li>
+              <li><i class="fas fa-check"></i> Third-Party Insurance</li>
+              <li><i class="fas fa-check"></i> 100 km/day limit</li>
+              <li><i class="fas fa-check"></i> 24/7 Roadside Assistance</li>
+              <li class="not-included"><i class="fas fa-times"></i> Free Cancellation</li>
+              <li class="not-included"><i class="fas fa-times"></i> Riding Gear Included</li>
+            </ul>
+          </div>
+          <div class="pricing-cta">
+            <a href="#" class="btn btn-secondary">Choose Plan</a>
+          </div>
+        </div>
+        
+        <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-header">
+            <div class="pricing-icon">
+              <i class="fas fa-motorcycle"></i>
+            </div>
+            <h3>Premium</h3>
+            <div class="price" data-daily="$120" data-weekly="$700" data-monthly="$2400">
+              <span class="amount">$120</span>
+              <span class="period">/day</span>
+            </div>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Premium Motorcycles</li>
+              <li><i class="fas fa-check"></i> Comprehensive Insurance</li>
+              <li><i class="fas fa-check"></i> 200 km/day limit</li>
+              <li><i class="fas fa-check"></i> 24/7 Roadside Assistance</li>
+              <li><i class="fas fa-check"></i> Free Cancellation</li>
+              <li><i class="fas fa-check"></i> Basic Riding Gear Included</li>
+            </ul>
+          </div>
+          <div class="pricing-cta">
+            <a href="#" class="btn btn-primary">Choose Plan</a>
+          </div>
+        </div>
+        
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="pricing-header">
+            <div class="pricing-icon">
+              <i class="fas fa-motorcycle"></i>
+            </div>
+            <h3>Luxury</h3>
+            <div class="price" data-daily="$180" data-weekly="$1100" data-monthly="$3800">
+              <span class="amount">$180</span>
+              <span class="period">/day</span>
+            </div>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Luxury Motorcycles</li>
+              <li><i class="fas fa-check"></i> Full Coverage Insurance</li>
+              <li><i class="fas fa-check"></i> Unlimited mileage</li>
+              <li><i class="fas fa-check"></i> 24/7 Roadside Assistance</li>
+              <li><i class="fas fa-check"></i> Free Cancellation</li>
+              <li><i class="fas fa-check"></i> Full Riding Gear Included</li>
+            </ul>
+          </div>
+          <div class="pricing-cta">
+            <a href="#" class="btn btn-secondary">Choose Plan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- FAQ Section -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to common questions about our rental services</p>
+      </div>
+      <div class="faq-container" data-aos="fade-up">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What documents do I need to rent a vehicle?</h3>
+            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>To rent a vehicle, you'll need a valid driver's license, a credit card in your name, and proof of insurance. For motorcycle rentals, you'll need a valid motorcycle license or endorsement. International customers will need a passport and may require an International Driving Permit.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What is your cancellation policy?</h3>
+            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Our standard cancellation policy allows for full refunds if cancelled 48 hours before the scheduled pickup time. Premium and Luxury plans offer free cancellation up to 24 hours before pickup. Cancellations made after these timeframes may be subject to a fee.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Is insurance included in the rental price?</h3>
+            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Basic third-party insurance is included with all rentals. Comprehensive and full coverage insurance are included with Premium and Luxury plans respectively. Additional insurance options are available for purchase at the time of booking.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can I rent a vehicle if I'm under 25 years old?</h3>
+            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, drivers between 21-24 years old can rent most vehicles, but may be subject to a young driver surcharge. Luxury and high-performance vehicles may have a minimum age requirement of 25 or 30 years depending on the model.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Do you offer one-way rentals?</h3>
+            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, we offer one-way rentals between our locations for an additional fee. The fee varies depending on the distance between pickup and drop-off locations. Please contact us for specific pricing on your desired route.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content" data-aos="zoom-in">
+        <h2>Ready for the Ride of Your Life?</h2>
+        <p>Book your premium motorcycle rental today and experience the thrill of the open road</p>
+        <a href="#vehicles" class="btn btn-primary">Browse Motorcycles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick View Modal -->
+  <div class="modal" id="quickViewModal">
+    <div class="modal-content">
+      <span class="close-modal"><i class="fas fa-times"></i></span>
+      <div class="modal-body">
+        <!-- Content loaded dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Compare Modal -->
+  <div class="modal" id="compareModal">
+    <div class="modal-content">
+      <span class="close-modal"><i class="fas fa-times"></i></span>
+      <div class="modal-header">
+        <h2>Compare Motorcycles</h2>
+      </div>
+      <div class="modal-body">
+        <div class="compare-container">
+          <div class="compare-vehicles">
+            <!-- Vehicles to compare will be added here dynamically -->
+          </div>
+          <div class="compare-table-container">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <!-- Vehicle names will be added here dynamically -->
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Comparison data will be added here dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+      <span class="close-modal"><i class="fas fa-times"></i></span>
+      <div class="modal-header">
+        <h2>Motorcycle Video</h2>
+      </div>
+      <div class="modal-body">
+        <div class="video-container">
+          <video id="motorcycle-video" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+
+  <!-- Cookie Consent -->
+  <div class="cookie-consent">
+    <div class="cookie-content">
+      <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+      <div class="cookie-buttons">
+        <button class="btn btn-secondary cookie-settings-btn">Cookie Settings</button>
+        <button class="btn btn-primary cookie-accept-btn">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <svg class="logo-icon" width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="45" stroke="#FF6B35" stroke-width="5"/>
+              <path d="M30 50C30 40 40 30 50 30C60 30 70 40 70 50" stroke="#FF6B35" stroke-width="5" stroke-linecap="round"/>
+              <path d="M70 50C70 60 60 70 50 70C40 70 30 60 30 50" stroke="#FF6B35" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="50" cy="50" r="10" fill="#FF6B35"/>
+            </svg>
+            <h2>Xos Rental</h2>
+          </div>
+          <p>Premium car and bike rental services for all your transportation needs. Experience quality vehicles and exceptional service.</p>
+          <div class="footer-social">
+            
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        
+        
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p>Subscribe to our newsletter for the latest updates and offers</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; 2023 Xos Rental. All rights reserved.</p>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Main Script -->
+   <script src="booking-system.js"></script>
+  <script src="script.js"></script>
+  <script src="dark-mode.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

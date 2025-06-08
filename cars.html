@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xos Rental | Premium Car Rental</title>
+  
+  <!-- Meta tags for better SEO -->
+  <meta name="description" content="Premium car rental service with luxury vehicles, sports cars, and SUVs">
+  <meta name="keywords" content="car rental, luxury cars, sports cars, SUVs, premium vehicles">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Swiper CSS for sliders -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="booking-styles.css">
+  <link rel="stylesheet" href="dark-mode.css">
+  <link rel="stylesheet" href="chat.css">
+
+  <style>
+    /* Animated Header Styles */
+    .hero-animated {
+      position: relative;
+      height: 100vh;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: white;
+    }
+
+    /* Animated Background Grid */
+    .tech-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(255, 107, 53, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 53, 0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: gridMove 20s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+
+    /* Floating Car Images */
+    .floating-cars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .car-float {
+      position: absolute;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+    }
+
+    .car-float:hover {
+      opacity: 1;
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(255, 107, 53, 0.5);
+    }
+
+    .car-float:nth-child(1) {
+      width: 300px;
+      height: 200px;
+      top: 10%;
+      left: 5%;
+      animation: float1 8s ease-in-out infinite;
+    }
+
+    .car-float:nth-child(2) {
+      width: 250px;
+      height: 150px;
+      top: 20%;
+      right: 10%;
+      animation: float2 10s ease-in-out infinite;
+    }
+
+    .car-float:nth-child(3) {
+      width: 280px;
+      height: 180px;
+      bottom: 20%;
+      left: 8%;
+      animation: float3 12s ease-in-out infinite;
+    }
+
+    .car-float:nth-child(4) {
+      width: 320px;
+      height: 200px;
+      bottom: 10%;
+      right: 5%;
+      animation: float4 9s ease-in-out infinite;
+    }
+
+    .car-float:nth-child(5) {
+      width: 260px;
+      height: 160px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: float5 11s ease-in-out infinite;
+    }
+
+    @keyframes float1 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(2deg); }
+    }
+
+    @keyframes float2 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-25px) rotate(-1deg); }
+    }
+
+    @keyframes float3 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-35px) rotate(1deg); }
+    }
+
+    @keyframes float4 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(-2deg); }
+    }
+
+    @keyframes float5 {
+      0%, 100% { transform: translate(-50%, -50%) translateY(0px) rotate(0deg); }
+      50% { transform: translate(-50%, -50%) translateY(-40px) rotate(1deg); }
+    }
+
+    /* Neon Light Sweeps */
+    .neon-sweeps {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+
+    .light-sweep {
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, #FF6B35, transparent);
+      animation: sweep 4s linear infinite;
+    }
+
+    .light-sweep:nth-child(1) {
+      left: 20%;
+      animation-delay: 0s;
+    }
+
+    .light-sweep:nth-child(2) {
+      left: 50%;
+      animation-delay: 1s;
+    }
+
+    .light-sweep:nth-child(3) {
+      left: 80%;
+      animation-delay: 2s;
+    }
+
+    @keyframes sweep {
+      0% { opacity: 0; transform: translateX(-100px); }
+      50% { opacity: 1; }
+      100% { opacity: 0; transform: translateX(100px); }
+    }
+
+    /* Speed Lines */
+    .speed-lines {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .speed-line {
+      position: absolute;
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #FF6B35, transparent);
+      animation: speedLine 2s linear infinite;
+    }
+
+    .speed-line:nth-child(odd) {
+      top: 20%;
+      animation-delay: 0s;
+    }
+
+    .speed-line:nth-child(even) {
+      top: 60%;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes speedLine {
+      0% { left: -100px; opacity: 0; }
+      50% { opacity: 1; }
+      100% { left: 100%; opacity: 0; }
+    }
+
+    /* Tech Particles */
+    .tech-particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 4;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #FF6B35;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #FF6B35;
+      animation: particleFloat 6s linear infinite;
+    }
+
+    @keyframes particleFloat {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) translateX(100px);
+        opacity: 0;
+      }
+    }
+
+    /* Hero Content */
+    .hero-content-animated {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 1000px;
+      padding: 0 20px;
+    }
+
+    .hero-title-animated {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #FF6B35, #ffffff, #FF6B35);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: textShine 3s ease-in-out infinite, slideUp 1s ease 0.5s both;
+      text-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
+    }
+
+    @keyframes textShine {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .hero-subtitle-animated {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: slideUp 1s ease 1s both;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Search Form */
+    .search-container-animated {
+      background: rgba(255, 107, 53, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-top: 2rem;
+      opacity: 0;
+      animation: slideUp 1s ease 1.5s both;
+      border: 1px solid rgba(255, 107, 53, 0.3);
+    }
+
+    .search-form-animated {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      align-items: end;
+    }
+
+    .form-group-animated {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group-animated label {
+      color: white;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-group-animated input,
+    .form-group-animated select {
+      padding: 12px 16px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-group-animated input:focus,
+    .form-group-animated select:focus {
+      outline: none;
+      background: white;
+      box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+    }
+
+    .btn-search-animated {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #FF6B35, #ff8c42);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-search-animated:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+    }
+
+    .btn-search-animated::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-search-animated:hover::before {
+      left: 100%;
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator-animated {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      opacity: 0;
+      animation: fadeIn 1s ease 2s both;
+    }
+
+    .scroll-arrow-animated {
+      width: 30px;
+      height: 30px;
+      border: 2px solid #FF6B35;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(-45deg);
+      }
+      40% {
+        transform: translateY(-10px) rotate(-45deg);
+      }
+      60% {
+        transform: translateY(-5px) rotate(-45deg);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .car-float {
+        display: none;
+      }
+
+      .search-form-animated {
+        grid-template-columns: 1fr;
+      }
+
+      .search-container-animated {
+        padding: 1.5rem;
+      }
+    }
+
+    /* Performance optimizations */
+    .hero-animated * {
+      will-change: transform;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .car-float,
+      .tech-grid,
+      .light-sweep,
+      .speed-line,
+      .particle {
+        animation: none;
+      }
+      
+      .hero-title-animated,
+      .hero-subtitle-animated,
+      .search-container-animated,
+      .scroll-indicator-animated {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body class="cars-page">
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader">
+      <svg class="car" width="102" height="40" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(2 1)" stroke="#FF6B35" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+          <path class="car__body" d="M47.293 2.375C52.927.792 54.017.805 54.017.805c2.613-.445 6.838-.337 9.42.237l8.381 1.863c2.59.576 6.164 2.606 7.98 4.531l6.348 6.732 6.245 1.877c3.098.508 5.609 3.431 5.609 6.507v4.206c0 .29-2.536 4.189-5.687 4.189H36.808c-2.655 0-4.34-2.1-3.688-4.67 0 0 3.71-19.944 14.173-23.902zM36.5 15.5h54.01" stroke-width="3"/>
+          <ellipse class="car__wheel--left" stroke-width="3.2" fill="#FFF" cx="83.493" cy="30.25" rx="6.922" ry="6.808"/>
+          <ellipse class="car__wheel--right" stroke-width="3.2" fill="#FFF" cx="46.511" cy="30.25" rx="6.922" ry="6.808"/>
+          <path class="car__line car__line--top" d="M22.5 16.5H2.475" stroke-width="3"/>
+          <path class="car__line car__line--middle" d="M20.5 23.5H.4755" stroke-width="3"/>
+          <path class="car__line car__line--bottom" d="M25.5 9.5h-19" stroke-width="3"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <header id="header" class="header">
+  <div class="container">
+    <div class="logo">
+      <svg class="logo-icon" width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" stroke="#FF6B35" stroke-width="5"/>
+        <path d="M30 50C30 40 40 30 50 30C60 30 70 40 70 50" stroke="#FF6B35" stroke-width="5" stroke-linecap="round"/>
+        <path d="M70 50C70 60 60 70 50 70C40 70 30 60 30 50" stroke="#FF6B35" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="10" fill="#FF6B35"/>
+      </svg>
+      <h1>Xos Rental</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="bikes.html">Bikes</a></li>
+        <li><a href="Booked.html">Booked</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <div class="cta-buttons">
+      <!-- Dark Mode Toggle -->
+      <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </button>
+      <a href="login.html" class="btn btn-secondary">Login</a>
+      <a href="login.html?signup=true" class="btn btn-primary">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+  <!-- Animated Hero Section -->
+  <section class="hero-animated">
+    <!-- Tech Grid Background -->
+    <div class="tech-grid"></div>
+
+    <!-- Floating Car Images -->
+    <div class="floating-cars">
+      <img src="/placeholder.svg?height=200&width=300" alt="Luxury Car" class="car-float">
+      <img src="/placeholder.svg?height=150&width=250" alt="Sports Car" class="car-float">
+      <img src="/placeholder.svg?height=180&width=280" alt="SUV" class="car-float">
+      <img src="/placeholder.svg?height=200&width=320" alt="Electric Car" class="car-float">
+      <img src="/placeholder.svg?height=160&width=260" alt="Premium Car" class="car-float">
+    </div>
+
+    <!-- Neon Light Sweeps -->
+    <div class="neon-sweeps">
+      <div class="light-sweep"></div>
+      <div class="light-sweep"></div>
+      <div class="light-sweep"></div>
+    </div>
+
+    <!-- Speed Lines -->
+    <div class="speed-lines">
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+    </div>
+
+    <!-- Tech Particles -->
+    <div class="tech-particles" id="particles-container"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content-animated">
+      <h1 class="hero-title-animated">PREMIUM CARS</h1>
+      <p class="hero-subtitle-animated">Discover Our Luxury & Performance Collection</p>
+      
+      <div class="search-container-animated">
+        <form id="search-form" class="search-form-animated">
+          <div class="form-group-animated">
+            <label for="car-type">Car Type</label>
+            <select id="car-type">
+              <option value="all">All Cars</option>
+              <option value="luxury">Luxury</option>
+              <option value="sports">Sports</option>
+              <option value="suv">SUV</option>
+              <option value="economy">Economy</option>
+            </select>
+          </div>
+          <div class="form-group-animated">
+            <label for="pickup-location">Pickup Location</label>
+            <input type="text" id="pickup-location" placeholder="Enter city or location">
+          </div>
+          <div class="form-group-animated">
+            <label for="pickup-date">Pickup Date</label>
+            <input type="date" id="pickup-date">
+          </div>
+          <div class="form-group-animated">
+            <label for="return-date">Return Date</label>
+            <input type="date" id="return-date">
+          </div>
+          <div class="form-group-animated">
+            <button type="submit" class="btn-search-animated">Search Cars</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator-animated">
+      <div class="scroll-arrow-animated"></div>
+    </div>
+  </section>
+
+  <!-- Rest of the existing content remains the same -->
+  <!-- Car Categories -->
+  <section class="categories">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Browse by Category</h2>
+        <p>Find the perfect car for your needs</p>
+      </div>
+      <div class="category-grid" data-aos="fade-up">
+        <div class="category-card" data-category="luxury">
+          <div class="category-icon">
+            <i class="fas fa-car-side"></i>
+          </div>
+          <h3>Luxury</h3>
+          <p>Premium comfort and style</p>
+          <span class="category-price">From $150/day</span>
+        </div>
+        <div class="category-card" data-category="sports">
+          <div class="category-icon">
+            <i class="fas fa-car"></i>
+          </div>
+          <h3>Sports</h3>
+          <p>High performance thrills</p>
+          <span class="category-price">From $180/day</span>
+        </div>
+        <div class="category-card" data-category="suv">
+          <div class="category-icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <h3>SUV</h3>
+          <p>Space and versatility</p>
+          <span class="category-price">From $120/day</span>
+        </div>
+        <div class="category-card" data-category="economy">
+          <div class="category-icon">
+            <i class="fas fa-car-alt"></i>
+          </div>
+          <h3>Economy</h3>
+          <p>Efficient and affordable</p>
+          <span class="category-price">From $45/day</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Luxury Cars Section -->
+  <section id="luxury-cars" class="featured">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Luxury Cars</h2>
+        <p>Experience unparalleled comfort and sophistication</p>
+      </div>
+      <div class="vehicles-grid" data-aos="fade-up">
+        <!-- Mercedes S-Class -->
+        <div class="vehicle-card" data-category="luxury">
+          <div class="vehicle-image">
+            <img src="jpg(2).jpg" alt="Mercedes S-Class">
+            <span class="tag">Premium</span>
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="mercedes-s-class.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Mercedes S-Class</h3>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="count">(39)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>5 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>4.0L V8</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-car-side"></i>
+                <span>Luxury Sedan</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The Mercedes S-Class sets the standard for luxury sedans with its opulent interior, cutting-edge technology, and refined driving experience.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$190<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Rolls Royce Phantom -->
+        <div class="vehicle-card" data-category="luxury">
+          <div class="vehicle-image">
+            <img src="🚘✨ Rolls-Royce Phantom _ Élégance et Luxe Intemporel 🏆🏢.jpg" alt="Rolls Royce Phantom">
+            <span class="tag">Ultimate Luxury</span>
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="rolls-royce-phantom.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Rolls Royce Phantom</h3>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="count">(28)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>4 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>6.75L V12</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-star"></i>
+                <span>Bespoke Luxury</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The Rolls Royce Phantom represents the pinnacle of automotive luxury with handcrafted details and unparalleled comfort.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$450<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bentley Continental GT -->
+        <div class="vehicle-card" data-category="luxury">
+          <div class="vehicle-image">
+            <img src="bently.jpg" alt="Bentley Continental GT">
+            <span class="tag">Grand Tourer</span>
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="bentley-continental.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Bentley Continental GT</h3>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="count">(31)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>4 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>6.0L W12</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>0-60mph: 3.6s</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The Bentley Continental GT combines breathtaking performance with exquisite craftsmanship and luxurious comfort.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$350<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Audi A8 -->
+        <div class="vehicle-card" data-category="luxury">
+          <div class="vehicle-image">
+            <img src="Audi.jpg" alt="Audi A8">
+            <span class="tag">Executive</span>
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="audi-a8.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Audi A8</h3>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="count">(27)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>5 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>3.0L V6</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-car-side"></i>
+                <span>Quattro AWD</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The Audi A8 offers cutting-edge technology, premium comfort, and sophisticated design in a luxury sedan package.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$170<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sports Cars Section -->
+  <section id="sports-cars" class="featured">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Sports Cars</h2>
+        <p>Experience thrilling performance and adrenaline</p>
+      </div>
+      <div class="vehicles-grid" data-aos="fade-up">
+        <!-- Ferrari 488 GTB -->
+        <div class="vehicle-card" data-category="sports">
+          <div class="vehicle-image">
+            <img src="Ferrari(1).jpg" alt="Ferrari 488 GTB">
+            <span class="tag">Supercar</span>
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="ferrari-488.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Ferrari 488 GTB</h3>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="count">(22)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>2 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>3.9L Twin-Turbo V8</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>0-60mph: 3.0s</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The Ferrari 488 GTB delivers breathtaking performance with its mid-engine layout and race-inspired aerodynamics.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$500<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lamborghini Huracan -->
+        <div class="vehicle-card" data-category="sports">
+          <div class="vehicle-image">
+            <img src="@amazingsupercar LAMBORGHINI HURACAN.jpg" alt="Lamborghini Huracan">
+            <span class="tag">Supercar</span>
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="lamborghini-huracan.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Lamborghini Huracan</h3>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="count">(24)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>2 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>5.2L V10</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>0-60mph: 2.5s</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The Lamborghini Huracan offers an exhilarating driving experience with its screaming V10 engine and razor-sharp handling.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$550<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- McLaren 720S -->
+        <div class="vehicle-card" data-category="sports">
+          <div class="vehicle-image">
+            <img src="mclaren 720s.jpg" alt="McLaren 720S">
+            <span class="tag">Supercar</span>
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="mclaren-720s.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>McLaren 720S</h3>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="count">(20)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>2 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>4.0L Twin-Turbo V8</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>0-60mph: 2.7s</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The McLaren 720S combines cutting-edge aerodynamics with a lightweight carbon fiber structure for mind-blowing performance.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$600<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUV Cars Section -->
+  <section id="suv-cars" class="featured">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>SUV Cars</h2>
+        <p>Powerful and spacious vehicles for any adventure</p>
+      </div>
+      <div class="vehicles-grid" data-aos="fade-up">
+        <!-- Range Rover Sport -->
+        <div class="vehicle-card" data-category="suv">
+          <div class="vehicle-image">
+            <img src="Rover.jpg" alt="Range Rover Sport">
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="range-rover.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Range Rover Sport</h3>
+              <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="count">(36)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>5 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>3.0L V6</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-mountain"></i>
+                <span>All-Terrain</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>Luxury meets capability in the Range Rover Sport, offering premium comfort and exceptional off-road performance.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$160<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Jeep Wrangler -->
+        <div class="vehicle-card" data-category="suv">
+          <div class="vehicle-image">
+            <img src="wagen.jpg" alt="Jeep Wrangler">
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="jeep-wrangler.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Jeep Wrangler</h3>
+              <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="count">(38)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>5 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Manual</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>3.6L V6</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-mountain"></i>
+                <span>Off-Road</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The iconic Jeep Wrangler offers unmatched off-road capability with the freedom of open-air driving.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$95<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mercedes G-Class -->
+        <div class="vehicle-card" data-category="suv">
+          <div class="vehicle-image">
+            <img src="MERCEDES BENZ.jpg" alt="Mercedes G-Class">
+            <span class="tag">Luxury Off-Road</span>
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="mercedes-g-class.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Mercedes G-Class</h3>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="count">(26)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>5 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>4.0L Twin-Turbo V8</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-mountain"></i>
+                <span>3 Locking Diffs</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The Mercedes G-Class combines military-grade off-road capability with luxurious comfort and modern technology.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$300<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tesla Model X -->
+        <div class="vehicle-card" data-category="suv">
+          <div class="vehicle-image">
+            <img src="melhor carro pra comprar.jpg" alt="Tesla Model X">
+            <span class="tag">Electric</span>
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="tesla-model-x.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Tesla Model X</h3>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="count">(35)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>7 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-bolt"></i>
+                <span>Electric</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>0-60mph: 2.6s</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The Tesla Model X redefines the SUV with its falcon-wing doors, impressive performance, and cutting-edge technology.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$150<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Economy Cars Section -->
+  <section id="economy-cars" class="featured">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Economy Cars</h2>
+        <p>Affordable and efficient vehicles for everyday use</p>
+      </div>
+      <div class="vehicles-grid" data-aos="fade-up">
+        <!-- Honda Civic -->
+        <div class="vehicle-card" data-category="economy">
+          <div class="vehicle-image">
+            <img src="Honda Civic.jpg" alt="Honda Civic">
+            <span class="tag">Popular</span>
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="honda-civic.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Honda Civic</h3>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="count">(50)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>5 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>2.0L I4</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-leaf"></i>
+                <span>36 MPG</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The Honda Civic combines sporty styling with excellent fuel efficiency and a comfortable, well-equipped interior.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$48<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hyundai Elantra -->
+        <div class="vehicle-card" data-category="economy">
+          <div class="vehicle-image">
+            <img src="hayund.jpg" alt="Hyundai Elantra">
+            <span class="tag">Value</span>
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="hyundai-elantra.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Hyundai Elantra</h3>
+              <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="count">(42)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>5 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>2.0L I4</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-leaf"></i>
+                <span>37 MPG</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The Hyundai Elantra offers premium features at an affordable price with its stylish design and comfortable ride.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$42<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kia Forte -->
+        <div class="vehicle-card" data-category="economy">
+          <div class="vehicle-image">
+            <img src="kia.jpg" alt="Kia Forte">
+            <span class="tag">Budget Friendly</span>
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="kia-forte.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Kia Forte</h3>
+              <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="count">(40)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>5 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>2.0L I4</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-leaf"></i>
+                <span>35 MPG</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The Kia Forte delivers impressive value with its long warranty, modern features, and fuel-efficient performance.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$40<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Volkswagen Jetta -->
+        <div class="vehicle-card" data-category="economy">
+          <div class="vehicle-image">
+            <img src="volkes.jpg" alt="Volkswagen Jetta">
+            <span class="tag">German Engineering</span>
+            <div class="quick-view">Quick View</div>
+            <div class="vehicle-actions">
+              <button class="action-btn compare-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+              <button class="action-btn favorite-btn" title="Add to Favorites"><i class="far fa-heart"></i></button>
+              <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+              <button class="action-btn video-btn" title="Watch Video" data-video="volkswagen-jetta.mp4"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="vehicle-details">
+            <div class="vehicle-title">
+              <h3>Volkswagen Jetta</h3>
+              <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="count">(38)</span>
+              </div>
+            </div>
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <i class="fas fa-chair"></i>
+                <span>5 Seats</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-cog"></i>
+                <span>Automatic</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-gas-pump"></i>
+                <span>1.5L Turbo I4</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-leaf"></i>
+                <span>41 MPG</span>
+              </div>
+            </div>
+            <div class="vehicle-description">
+              <p>The Volkswagen Jetta offers European driving dynamics with excellent fuel economy and a premium interior.</p>
+            </div>
+            <div class="vehicle-price">
+              <h4>$46<span>/day</span></h4>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose-us">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Why Choose Our Car Rentals</h2>
+        <p>Experience the WheelsOnDemand difference</p>
+      </div>
+      <div class="features-grid" data-aos="fade-up">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-car"></i>
+          </div>
+          <h3>Premium Fleet</h3>
+          <p>Our cars are regularly maintained and kept in pristine condition for your safety and comfort.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <h3>Best Price Guarantee</h3>
+          <p>We offer competitive pricing and will match any lower price for the same vehicle and rental terms.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>24/7 Support</h3>
+          <p>Our customer service team is available around the clock to assist with any questions or issues.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Comprehensive Insurance</h3>
+          <p>All our rentals include insurance coverage for your peace of mind during your journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="how-it-works">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>How It Works</h2>
+        <p>Rent a vehicle in 3 simple steps</p>
+      </div>
+      <div class="steps" data-aos="fade-up">
+        <div class="step" data-aos="fade-up" data-aos-delay="100">
+          <div class="step-icon">
+            <i class="fas fa-car-side"></i>
+            <span class="step-number">1</span>
+          </div>
+          <h3>Choose Your Vehicle</h3>
+          <p>Browse our extensive collection of cars and bikes to find your perfect match</p>
+        </div>
+        <div class="step" data-aos="fade-up" data-aos-delay="200">
+          <div class="step-icon">
+            <i class="fas fa-calendar-check"></i>
+            <span class="step-number">2</span>
+          </div>
+          <h3>Book Online</h3>
+          <p>Select your dates, provide your details, and make a secure payment</p>
+        </div>
+        <div class="step" data-aos="fade-up" data-aos-delay="300">
+          <div class="step-icon">
+            <i class="fas fa-road"></i>
+            <span class="step-number">3</span>
+          </div>
+          <h3>Enjoy Your Ride</h3>
+          <p>Pick up your vehicle at the designated location and hit the road</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Plans -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Car Rental Plans</h2>
+        <p>Choose the plan that fits your needs</p>
+      </div>
+      <div class="pricing-tabs" data-aos="fade-up">
+        <button class="tab-btn active" data-plan="daily">Daily</button>
+        <button class="tab-btn" data-plan="weekly">Weekly</button>
+        <button class="tab-btn" data-plan="monthly">Monthly</button>
+      </div>
+      <div class="pricing-cards" data-aos="fade-up">
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing-header">
+            <div class="pricing-icon">
+              <i class="fas fa-car-side"></i>
+            </div>
+            <h3>Economy</h3>
+            <div class="price" data-daily="$45" data-weekly="$250" data-monthly="$900">
+              <span class="amount">$45</span>
+              <span class="period">/day</span>
+            </div>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Economy Cars</li>
+              <li><i class="fas fa-check"></i> Third-Party Insurance</li>
+              <li><i class="fas fa-check"></i> 100 km/day limit</li>
+              <li><i class="fas fa-check"></i> 24/7 Roadside Assistance</li>
+              <li class="not-included"><i class="fas fa-times"></i> Free Cancellation</li>
+              <li class="not-included"><i class="fas fa-times"></i> Additional Driver</li>
+            </ul>
+          </div>
+          <div class="pricing-cta">
+            <a href="#" class="btn btn-secondary">Choose Plan</a>
+          </div>
+        </div>
+        
+        <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-header">
+            <div class="pricing-icon">
+              <i class="fas fa-car"></i>
+            </div>
+            <h3>Premium</h3>
+            <div class="price" data-daily="$85" data-weekly="$500" data-monthly="$1800">
+              <span class="amount">$85</span>
+              <span class="period">/day</span>
+            </div>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Premium Cars</li>
+              <li><i class="fas fa-check"></i> Comprehensive Insurance</li>
+              <li><i class="fas fa-check"></i> 200 km/day limit</li>
+              <li><i class="fas fa-check"></i> 24/7 Roadside Assistance</li>
+              <li><i class="fas fa-check"></i> Free Cancellation</li>
+              <li><i class="fas fa-check"></i> Additional Driver</li>
+            </ul>
+          </div>
+          <div class="pricing-cta">
+            <a href="#" class="btn btn-primary">Choose Plan</a>
+          </div>
+        </div>
+        
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="pricing-header">
+            <div class="pricing-icon">
+              <i class="fas fa-car-alt"></i>
+            </div>
+            <h3>Luxury</h3>
+            <div class="price" data-daily="$150" data-weekly="$900" data-monthly="$3200">
+              <span class="amount">$150</span>
+              <span class="period">/day</span>
+            </div>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Luxury Cars</li>
+              <li><i class="fas fa-check"></i> Full Coverage Insurance</li>
+              <li><i class="fas fa-check"></i> Unlimited mileage</li>
+              <li><i class="fas fa-check"></i> 24/7 Roadside Assistance</li>
+              <li><i class="fas fa-check"></i> Free Cancellation</li>
+              <li><i class="fas fa-check"></i> Multiple Additional Drivers</li>
+            </ul>
+          </div>
+          <div class="pricing-cta">
+            <a href="#" class="btn btn-secondary">Choose Plan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to common questions about our rental services</p>
+      </div>
+      <div class="faq-container" data-aos="fade-up">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What documents do I need to rent a vehicle?</h3>
+            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>To rent a vehicle, you'll need a valid driver's license, a credit card in your name, and proof of insurance. For motorcycle rentals, you'll need a valid motorcycle license or endorsement. International customers will need a passport and may require an International Driving Permit.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What is your cancellation policy?</h3>
+            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Our standard cancellation policy allows for full refunds if cancelled 48 hours before the scheduled pickup time. Premium and Luxury plans offer free cancellation up to 24 hours before pickup. Cancellations made after these timeframes may be subject to a fee.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Is insurance included in the rental price?</h3>
+            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Basic third-party insurance is included with all rentals. Comprehensive and full coverage insurance are included with Premium and Luxury plans respectively. Additional insurance options are available for purchase at the time of booking.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can I rent a vehicle if I'm under 25 years old?</h3>
+            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, drivers between 21-24 years old can rent most vehicles, but may be subject to a young driver surcharge. Luxury and high-performance vehicles may have a minimum age requirement of 25 or 30 years depending on the model.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Do you offer one-way rentals?</h3>
+            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, we offer one-way rentals between our locations for an additional fee. The fee varies depending on the distance between pickup and drop-off locations. Please contact us for specific pricing on your desired route.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content" data-aos="zoom-in">
+        <h2>Ready to Drive Your Dream Car?</h2>
+        <p>Book your premium car rental today and experience luxury on the road</p>
+        <a href="#luxury-cars" class="btn btn-primary">Browse Cars</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick View Modal -->
+  <div class="modal" id="quickViewModal">
+    <div class="modal-content">
+      <span class="close-modal"><i class="fas fa-times"></i></span>
+      <div class="modal-body">
+        <!-- Content loaded dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Compare Modal -->
+  <div class="modal" id="compareModal">
+    <div class="modal-content">
+      <span class="close-modal"><i class="fas fa-times"></i></span>
+      <div class="modal-header">
+        <h2>Compare Cars</h2>
+      </div>
+      <div class="modal-body">
+        <div class="compare-container">
+          <div class="compare-vehicles">
+            <!-- Vehicles to compare will be added here dynamically -->
+          </div>
+          <div class="compare-table-container">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <!-- Vehicle names will be added here dynamically -->
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Comparison data will be added here dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div class="modal" id="videoModal">
+    <div class
+        <div class="video-container">
+          <video id="car-video" controls>
+            <source src="/placeholder.svg" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+
+  <!-- Cookie Consent -->
+  <div class="cookie-consent">
+    <div class="cookie-content">
+      <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+      <div class="cookie-buttons">
+        <button class="btn btn-secondary cookie-settings-btn">Cookie Settings</button>
+        <button class="btn btn-primary cookie-accept-btn">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <svg class="logo-icon" width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="45" stroke="#FF6B35" stroke-width="5"/>
+              <path d="M30 50C30 40 40 30 50 30C60 30 70 40 70 50" stroke="#FF6B35" stroke-width="5" stroke-linecap="round"/>
+              <path d="M70 50C70 60 60 70 50 70C40 70 30 60 30 50" stroke="#FF6B35" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="50" cy="50" r="10" fill="#FF6B35"/>
+            </svg>
+            <h2>Xos Rental</h2>
+          </div>
+          <p>Premium car and bike rental services for all your transportation needs. Experience quality vehicles and exceptional service.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+       
+        
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p>Subscribe to our newsletter for the latest updates and offers</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; 2023 Xos Rental All rights reserved.</p>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Create Tech Particles
+    function createParticles() {
+      const container = document.getElementById('particles-container');
+      const particleCount = 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        container.appendChild(particle);
+      }
+    }
+
+    // Smooth Scroll
+    function initSmoothScroll() {
+      const scrollIndicator = document.querySelector('.scroll-indicator-animated');
+      if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', () => {
+          window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+          });
+        });
+      }
+    }
+
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      createParticles();
+      initSmoothScroll();
+    });
+
+    // Performance optimization
+    document.addEventListener('visibilitychange', () => {
+      const particles = document.querySelectorAll('.particle');
+      const cars = document.querySelectorAll('.car-float');
+      
+      if (document.hidden) {
+        particles.forEach(p => p.style.animationPlayState = 'paused');
+        cars.forEach(c => c.style.animationPlayState = 'paused');
+      } else {
+        particles.forEach(p => p.style.animationPlayState = 'running');
+        cars.forEach(c => c.style.animationPlayState = 'running');
+      }
+    });
+  </script>
+
+  <!-- Existing Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="chat.js"></script>
+  <script src="script.js"></script>
+  <script src="booking-system.js"></script>
+  <script src="dark-mode.js"></script>
+</body>
+</html>
