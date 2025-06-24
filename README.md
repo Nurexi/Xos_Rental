@@ -58,13 +58,5 @@ Xos Rental is a modern, visually rich, and fully responsive car and bike rental 
 - Form field highlights on focus
 - Scroll-triggered fade animations
 
-## 📦 Installation & Usage
 
-```bash
-# Clone the repo
-git clone https://github.com/your-username/xos-rental.git
-
-# Open in browser
-cd xos-rental
-open index.html
 
