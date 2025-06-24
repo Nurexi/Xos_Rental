@@ -1,6 +1,6 @@
 # 🚗 Xos Rental  Premium Car & Bike Rental Website
 
-Xos Rental is a modern, visually rich, and fully responsive car and bike rental website. It offers an interactive platform for users to explore, book, and learn about premium vehicles from supercars and luxury SUVs to performance bikes.
+Xos Rental is a modern, visually rich, and fully responsive car and bike rental websites. It offers an interactive platform for users to explore, book, and learn about premium vehicles from supercars and luxury SUVs to performance bikes.
 
 ![MERCEDES BENZ](https://github.com/user-attachments/assets/a851fced-9424-4578-ae7c-462af045b39a
 ) <!-- Replace with your actual screenshot path -->
@@ -17,15 +17,15 @@ Xos Rental is a modern, visually rich, and fully responsive car and bike rental 
 - 🛠️ **Well-structured Code**: Modular CSS, semantic HTML, and clean JavaScript for future scalability.
 
 ## 📁 Project Structure
-├── index.html # Main landing page
-├── styles.css # Global stylesheet
-├── script.js # JavaScript for interactivity
-├── images/ # Vehicle and UI images
-├── cars.html # Cars catalog page
-├── bikes.html # Bikes catalog page
-├── Booked.html # Booked items or order page
-├── about-us.html # About page
-├── contact.html # Contact form
+├── index.html # Main landing page<br>
+├── styles.css # Global stylesheet<br>
+├── script.js # JavaScript for interactivity<br>
+├── images/ # Vehicle and UI images<br>
+├── cars.html # Cars catalog page<br>
+├── bikes.html # Bikes catalog page<br>
+├── Booked.html # Booked items or order page<br>
+├── about-us.html # About page<br>
+├── contact.html # Contact form<br>
 
 ## 🚧 Technologies Used
 
