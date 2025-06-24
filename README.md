@@ -17,4 +17,16 @@ Xos Rental is a modern, visually rich, and fully responsive car and bike rental 
 - 🛠️ **Well-structured Code**: Modular CSS, semantic HTML, and clean JavaScript for future scalability.
 
 ## 📁 Project Structure
-
+├── index.html # Main landing page
+├── styles.css # Global stylesheet
+├── script.js # JavaScript for interactivity
+├── images/ # Vehicle and UI images
+├── product-styles.css # Product section styling
+├── booking-styles.css # Booking page styling
+├── dark-mode.css # Dark mode themes
+├── chat.css # Live chat (optional)
+├── cars.html # Cars catalog page
+├── bikes.html # Bikes catalog page
+├── Booked.html # Booked items or order page
+├── about-us.html # About page
+├── contact.html # Contact form
