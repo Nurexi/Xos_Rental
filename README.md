@@ -30,3 +30,41 @@ Xos Rental is a modern, visually rich, and fully responsive car and bike rental 
 ├── Booked.html # Booked items or order page
 ├── about-us.html # About page
 ├── contact.html # Contact form
+
+## 🚧 Technologies Used
+
+- **HTML5**: Semantic and SEO-friendly structure
+- **CSS3**: Modern responsive design using Grid & Flexbox
+- **JavaScript (ES6)**: DOM manipulation, booking interaction, preloader, theme toggle
+- **AOS.js**: Scroll animations
+- **Swiper.js**: Sliders for vehicle display
+- **Font Awesome**: Icons for vehicles, features, and UI
+- **Google Fonts**: Stylish and legible typography (`Poppins`)
+
+## 🖼️ Sample Vehicle Cards
+
+- Ferrari 488 GTB – $500/day
+- Mercedes S-Class – $190/day
+- Ducati Panigale V4 – $150/day
+- BMW S1000RR – $135/day
+- Kawasaki Vulcan S – $70/day
+
+## 🎬 Animations & Interactions
+
+- Quick view hover effects
+- Star rating display
+- Floating action buttons (compare, like, share)
+- Vehicle video preview (modal-based)
+- Form field highlights on focus
+- Scroll-triggered fade animations
+
+## 📦 Installation & Usage
+
+```bash
+# Clone the repo
+git clone https://github.com/your-username/xos-rental.git
+
+# Open in browser
+cd xos-rental
+open index.html
+
