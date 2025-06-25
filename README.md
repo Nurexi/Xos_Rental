@@ -41,7 +41,7 @@ Xos Rental is a modern, visually rich, and fully responsive car and bike rental 
 - Mercedes S-Class – $190/day
 - Ducati Panigale V4 – $150/day
 - BMW S1000RR – $135/day
-- Kawasaki Vulcan S – $70/day
+
 
 ## 🎬 Animations & Interactions
 
