@@ -49,8 +49,7 @@ Xos Rental is a modern, visually rich, and fully responsive car and bike rental 
 - Star rating display
 - Floating action buttons (compare, like, share)
 - Vehicle video preview (modal-based)
-- Form field highlights on focus
-- Scroll-triggered fade animations
+
 
 
 
