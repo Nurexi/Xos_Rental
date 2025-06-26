@@ -68,4 +68,28 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ### ⭐ If you like this project, please give it a star and share it! 😊
 
+<h2 align="center">📊 GitHub Stats</h2>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Nurexi&show_icons=true&theme=aura&bg_color=0D1117&hide_border=true&ring_color=6F3AFF&title_color=E4B1FF&text_color=FFFFFF&icon_color=C3B1E1" alt="Nurexi's GitHub Stats" height="170" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Nurexi&layout=compact&theme=aura&bg_color=0D1117&hide_border=true&title_color=E4B1FF&text_color=FFFFFF" alt="Top Languages" height="170" />
+</p>
+
+<h2 align="center">🔥 GitHub Streak</h2>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Nurexi&theme=aura&hide_border=true&background=0D1117&ring=6F3AFF&fire=FF5C00&currStreakLabel=E4B1FF&sideLabels=C3B1E1" alt="Nurexi's GitHub Streak" />
+</p>
+
+<h2 align="center">🌟 GitHub Trophies</h2>
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Nurexi&theme=onedark&margin-w=10&margin-h=15&no-frame=true&column=6&title=Stars,Followers,Commits,Repositories,PullRequest,Issues" alt="GitHub Trophies" />
+</p>
+
+<h2 align="center">📈 Contribution Graph</h2>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Nurexi&theme=react-dark&bg_color=0D1117&color=E4B1FF&line=6F3AFF&point=C3B1E1&area=true&hide_border=true" alt="Contribution Graph" />
+</p>
 
