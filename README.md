@@ -1,4 +1,4 @@
-  # 🚗 Xos Rental  Premium Car & Bike Rental Website 
+  # 🚗 Xos Rental  Premium Car & Bike Rental Website  
   
 Xos Rental is a modern, visually rich, and fully responsive car and bike rental websites. It offers an interactive platform for users to explore, book, and learn about premium vehicles from supercars and luxury SUVs to performance bikes.
 
